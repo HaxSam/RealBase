@@ -1,0 +1,23 @@
+[package]
+name = "realbase"
+description = "A simple backend in a single executable"
+version = "0.1.0"
+edition = "2021"
+authors = ["HaxSam <haxsam@pm.me>"]
+repository = "https://github.com/HaxSam/realbase"
+readme = "README.md"
+license = "MIT"
+
+[profile.release]
+strip = true
+codegen-units = 1
+
+[dependencies]
+chrono = { version = "0.4.22", features = ["serde"] }
+clap = { version = "4.0.7", features = ["env", "derive"] }
+fern = { version = "0.6.1", features = ["colored"] }
+log = "0.4.17"
+once_cell = "1.15.0"
+surrealdb = "1.0.0-beta.8"
+thiserror = "1.0.37"
+tokio = { version = "1.21.2", features = ["full"] }
